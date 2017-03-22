@@ -107,14 +107,14 @@
             }
         },
         {
-            "data": "alert(\"Flowhub -- Wow!\")",
+            "data": "alert(\"Wow!\\n\" + x);",
             "tgt": {
                 "process": "core/MakeFunction_td2yo",
                 "port": "function"
             }
         },
         {
-            "data": 150,
+            "data": 1500,
             "tgt": {
                 "process": "core/RunTimeout_9zjrp",
                 "port": "time"
