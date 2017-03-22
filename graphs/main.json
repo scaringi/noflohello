@@ -9,6 +9,90 @@
     "inports": {},
     "outports": {},
     "groups": [],
-    "processes": {},
-    "connections": []
+    "processes": {
+        "core/Output_oe6oq": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "Output",
+                "x": 432,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/RunTimeout_9zjrp": {
+            "component": "core/RunTimeout",
+            "metadata": {
+                "label": "RunTimeout",
+                "x": 144,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "objects/CreateDate_3u480": {
+            "component": "objects/CreateDate",
+            "metadata": {
+                "label": "CreateDate",
+                "x": 288,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Repeat_j67bm": {
+            "component": "core/Repeat",
+            "metadata": {
+                "label": "Repeat",
+                "x": 36,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/RunTimeout_9zjrp",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "objects/CreateDate_3u480",
+                "port": "in"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
+                "process": "objects/CreateDate_3u480",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_oe6oq",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/Repeat_j67bm",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/RunTimeout_9zjrp",
+                "port": "start"
+            },
+            "metadata": {}
+        },
+        {
+            "data": 1500,
+            "tgt": {
+                "process": "core/RunTimeout_9zjrp",
+                "port": "time"
+            }
+        }
+    ]
 }
