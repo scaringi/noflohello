@@ -15,7 +15,7 @@
             "metadata": {
                 "label": "Output",
                 "x": 432,
-                "y": 36,
+                "y": -108,
                 "width": 72,
                 "height": 72
             }
@@ -49,6 +49,16 @@
                 "width": 72,
                 "height": 72
             }
+        },
+        "core/MakeFunction_td2yo": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "MakeFunction",
+                "x": 576,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "connections": [
@@ -67,17 +77,6 @@
         },
         {
             "src": {
-                "process": "objects/CreateDate_3u480",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "core/Output_oe6oq",
-                "port": "in"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
                 "process": "core/Repeat_j67bm",
                 "port": "out"
             },
@@ -88,7 +87,34 @@
             "metadata": {}
         },
         {
-            "data": 1500,
+            "src": {
+                "process": "objects/CreateDate_3u480",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/MakeFunction_td2yo",
+                "port": "in"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "data": "start",
+            "tgt": {
+                "process": "core/Repeat_j67bm",
+                "port": "in"
+            }
+        },
+        {
+            "data": "alert(\"Flowhub -- Wow!\")",
+            "tgt": {
+                "process": "core/MakeFunction_td2yo",
+                "port": "function"
+            }
+        },
+        {
+            "data": 150,
             "tgt": {
                 "process": "core/RunTimeout_9zjrp",
                 "port": "time"
